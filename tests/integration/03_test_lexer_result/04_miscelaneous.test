@@ -1,0 +1,50 @@
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/04_miscelaneous_01_float_OK.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error : impossible to open the file
+()
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/04_miscelaneous_02_complex_OK.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error : impossible to open the file
+()
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/04_miscelaneous_03_strings_verylong_OK.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error : impossible to open the file
+()
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/04_miscelaneous_04_label_verylong_OK.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error : impossible to open the file
+()
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/04_miscelaneous_05_strings_excaped_OK.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error : impossible to open the file
+()
+# END Test stdout and stderr
+# TEST END   ###################################################################

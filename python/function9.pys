@@ -1,0 +1,104 @@
+
+
+# Start pyc-objdump output
+
+.set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "functions/function9.py"
+.set name		 "<module>"
+.set stack_size		 3
+.set arg_count		 0
+
+.interned
+	"int"
+	"input"
+	"num"
+	"sum"
+	"temp"
+	"digit"
+	"<module>"
+
+.consts
+	"Enter a number: "
+	0
+	10
+	3
+	"is an Armstrong number"
+	"is not an Armstrong number"
+	None
+
+.names
+	"int"
+	"input"
+	"num"
+	"sum"
+	"temp"
+	"digit"
+
+.text
+.line 4
+	LOAD_NAME             0	# "int"
+	LOAD_NAME             1	# "input"
+	LOAD_CONST            0	# "Enter a number: "
+	CALL_FUNCTION         1
+	CALL_FUNCTION         1
+	STORE_NAME            2	# "num"
+.line 7
+	LOAD_CONST            1	# 0
+	STORE_NAME            3	# "sum"
+.line 10
+	LOAD_NAME             2	# "num"
+	STORE_NAME            4	# "temp"
+.line 11
+	SETUP_LOOP            label_2
+label_0:
+	LOAD_NAME             4	# "temp"
+	LOAD_CONST            1	# 0
+	COMPARE_OP            4	# ">"
+	POP_JUMP_IF_FALSE     label_1
+.line 12
+	LOAD_NAME             4	# "temp"
+	LOAD_CONST            2	# 10
+	BINARY_MODULO         
+	STORE_NAME            5	# "digit"
+.line 13
+	LOAD_NAME             3	# "sum"
+	LOAD_NAME             5	# "digit"
+	LOAD_CONST            3	# 3
+	BINARY_POWER          
+	INPLACE_ADD           
+	STORE_NAME            3	# "sum"
+.line 14
+	LOAD_NAME             4	# "temp"
+	LOAD_CONST            2	# 10
+	INPLACE_FLOOR_DIVIDE  
+	STORE_NAME            4	# "temp"
+	JUMP_ABSOLUTE         label_0
+label_1:
+	POP_BLOCK             
+.line 17
+label_2:
+	LOAD_NAME             2	# "num"
+	LOAD_NAME             3	# "sum"
+	COMPARE_OP            2	# "=="
+	POP_JUMP_IF_FALSE     label_3
+.line 18
+	LOAD_NAME             2	# "num"
+	LOAD_CONST            4	# "is an Armstrong number"
+	BUILD_TUPLE           2
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+	JUMP_FORWARD          label_4
+.line 20
+label_3:
+	LOAD_NAME             2	# "num"
+	LOAD_CONST            5	# "is not an Armstrong number"
+	BUILD_TUPLE           2
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+label_4:
+	LOAD_CONST            6	# None
+	RETURN_VALUE          
+
+# Disassembled Sat Nov 19 12:56:18 2022
+

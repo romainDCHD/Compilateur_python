@@ -1,0 +1,10 @@
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/02_fullcode_01_test_sujet.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error : impossible to open the file
+()
+# END Test stdout and stderr
+# TEST END   ###################################################################

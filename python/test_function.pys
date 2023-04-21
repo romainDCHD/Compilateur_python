@@ -1,0 +1,51 @@
+# Start pyc-objdump output
+
+.set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "functions/function1.py"
+.set name		 "<module>"
+.set stack_size		 2
+.set arg_count		 0
+
+.interned
+	"a"
+	"b"
+	"<module>"
+
+.consts
+	5
+	16
+	None
+
+.names
+	"a"
+	"b"
+	a84
+
+.text
+.line 3
+	LOAD_CONST            0	# 5
+	STORE_NAME            0	# "a"
+.line 4
+	LOAD_CONST            1	# 16
+	STORE_NAME            1	# "b"
+.line 6
+	LOAD_NAME             0	# "a"
+	LOAD_NAME             1	# "b"
+	COMPARE_OP            0	# "<"
+	POP_JUMP_IF_FALSE     label_0
+.line 7
+	LOAD_NAME             0	# "a"
+	PRINT_ITEM
+	PRINT_NEWLINE
+	JUMP_FORWARD          label_1
+.line 10
+label_0:
+	LOAD_NAME             1	# "b"
+	PRINT_ITEM
+	PRINT_NEWLINE
+label_1:
+	LOAD_CONST            2	# None
+	RETURN_VALUE
+
+# Disassembled Tue Oct 25 11:59:05 2022

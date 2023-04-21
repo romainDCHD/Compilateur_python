@@ -1,0 +1,14 @@
+# On indique à Git d'ignorer tous les fichier d'extension .o
+*.o
+
+# On indique à Git d'ignorer tous les fichier d'extension .exe
+*.exe
+
+# On indique à Git d'ignorer le répertoire bin/
+bin/
+
+# On indique à Git d'ignorer tous les fichier dont le nom se termine par ~ 
+*~
+
+# pour macos
+.DS_Store

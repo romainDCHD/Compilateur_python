@@ -1,0 +1,79 @@
+
+
+# Start pyc-objdump output
+
+.set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "./functions/function5.py"
+.set name		 "<module>"
+.set stack_size		 3
+.set arg_count		 0
+
+.interned
+	"num"
+	"reversed_num"
+	"digit"
+	"str"
+	"<module>"
+
+.consts
+	1234
+	0
+	10
+	"Reversed Number: "
+	None
+
+.names
+	"num"
+	"reversed_num"
+	"digit"
+	"str"
+
+.text
+.line 2
+	LOAD_CONST            0	# 1234
+	STORE_NAME            0	# "num"
+.line 3
+	LOAD_CONST            1	# 0
+	STORE_NAME            1	# "reversed_num"
+.line 5
+	SETUP_LOOP            label_2
+label_0:
+	LOAD_NAME             0	# "num"
+	LOAD_CONST            1	# 0
+	COMPARE_OP            3	# "!="
+	POP_JUMP_IF_FALSE     label_1
+.line 6
+	LOAD_NAME             0	# "num"
+	LOAD_CONST            2	# 10
+	BINARY_MODULO         
+	STORE_NAME            2	# "digit"
+.line 7
+	LOAD_NAME             1	# "reversed_num"
+	LOAD_CONST            2	# 10
+	BINARY_MULTIPLY       
+	LOAD_NAME             2	# "digit"
+	BINARY_ADD            
+	STORE_NAME            1	# "reversed_num"
+.line 8
+	LOAD_NAME             0	# "num"
+	LOAD_CONST            2	# 10
+	INPLACE_FLOOR_DIVIDE  
+	STORE_NAME            0	# "num"
+	JUMP_ABSOLUTE         label_0
+label_1:
+	POP_BLOCK             
+.line 10
+label_2:
+	LOAD_CONST            3	# "Reversed Number: "
+	LOAD_NAME             3	# "str"
+	LOAD_NAME             1	# "reversed_num"
+	CALL_FUNCTION         1
+	BINARY_ADD            
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+	LOAD_CONST            4	# None
+	RETURN_VALUE          
+
+# Disassembled Thu Nov 17 12:41:11 2022
+

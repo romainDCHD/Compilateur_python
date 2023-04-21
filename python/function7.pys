@@ -1,0 +1,94 @@
+
+
+# Start pyc-objdump output
+
+.set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "functions/function7.py"
+.set name		 "<module>"
+.set stack_size		 8
+.set arg_count		 0
+
+.interned
+	"egale"
+	"*"
+	"range"
+	"n"
+	"x"
+	"<module>"
+
+.consts
+	2
+	8
+	0
+	"egale"
+	"*"
+	"est un nombre premier"
+	None
+
+.names
+	"range"
+	"n"
+	"x"
+
+.text
+.line 1
+	SETUP_LOOP            label_5
+	LOAD_NAME             0	# "range"
+	LOAD_CONST            0	# 2
+	LOAD_CONST            1	# 8
+	CALL_FUNCTION         2
+	GET_ITER              
+label_0:
+	FOR_ITER              label_4
+	STORE_NAME            1	# "n"
+.line 2
+	SETUP_LOOP            label_3
+	LOAD_NAME             0	# "range"
+	LOAD_CONST            0	# 2
+	LOAD_NAME             1	# "n"
+	CALL_FUNCTION         2
+	GET_ITER              
+label_1:
+	FOR_ITER              label_2
+	STORE_NAME            2	# "x"
+.line 3
+	LOAD_NAME             1	# "n"
+	LOAD_NAME             2	# "x"
+	BINARY_MODULO         
+	LOAD_CONST            2	# 0
+	COMPARE_OP            2	# "=="
+	POP_JUMP_IF_FALSE     label_1
+.line 4
+	LOAD_NAME             1	# "n"
+	LOAD_CONST            3	# "egale"
+	LOAD_NAME             2	# "x"
+	LOAD_CONST            4	# "*"
+	LOAD_NAME             1	# "n"
+	LOAD_NAME             2	# "x"
+	BINARY_DIVIDE         
+	BUILD_TUPLE           5
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+.line 5
+	BREAK_LOOP            
+	JUMP_ABSOLUTE         label_1
+	JUMP_ABSOLUTE         label_1
+label_2:
+	POP_BLOCK             
+.line 7
+	LOAD_NAME             1	# "n"
+	LOAD_CONST            5	# "est un nombre premier"
+	BUILD_TUPLE           2
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+label_3:
+	JUMP_ABSOLUTE         label_0
+label_4:
+	POP_BLOCK             
+label_5:
+	LOAD_CONST            6	# None
+	RETURN_VALUE          
+
+# Disassembled Sat Nov 19 12:45:21 2022
+

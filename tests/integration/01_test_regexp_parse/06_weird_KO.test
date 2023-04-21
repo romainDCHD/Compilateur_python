@@ -1,0 +1,265 @@
+
+
+# TEST START ###################################################################
+# Test args              : '\a'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Don't know how to escape 97
+Error parsing regexp \a.
+POURRAIT ETRE AUSSI ACCEPTE COMME LE CARACTERE 'a'. A décider...
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\1'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Don't know how to escape 49
+Error parsing regexp \1.
+POURRAIT ETRE AUSSI ACCEPTE COMME LE CARACTERE '1'. A décider...
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\]'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Don't know how to escape 93
+Error parsing regexp \].
+POURRAIT ETRE AUSSI ACCEPTE COMME LE CARACTERE ']'. A décider...
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\a?'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Don't know how to escape 97
+Error parsing regexp \a?.
+POURRAIT ETRE AUSSI ACCEPTE COMME 'a*'. A décider...
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\#*'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Don't know how to escape 35
+Error parsing regexp \#*.
+POURRAIT ETRE AUSSI ACCEPTE COMME '#*'. A décider...
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[^a]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+PEUT ETRE ACCEPTE COMME "le caractère ‘a’ ou le caractère ‘^’"
+POURRAIT ETRE AUSSI ACCEPTE COMME "tout sauf a"
+POURRAIT ETRE AUSSI REFUSE comme invalide 
+(e.g. si vous considérez que les opérateurs doivent être échappés dans un groupe de char)
+A décider
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[^ab]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+PEUT ETRE ACCEPTE COMME "le caractère ‘a’ ou le caractère ‘^’ ou le caractère ‘b’" 
+POURRAIT ETRE AUSSI ACCEPTE COMME "tout sauf a et b"
+POURRAIT ETRE AUSSI REFUSE comme invalide 
+(e.g. si vous considérez que les opérateurs doivent être échappés dans un groupe de char)
+A décider
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a^b]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "a^b", one time.
+POURRAIT ETRE AUSSI REFUSE comme invalide 
+(si vous considérez que les opérateurs doivent être échappés dans un groupe de char)
+A décider
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[^a^b]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+PEUT ETRE ACCEPTE COMME "le caractère ‘a’ ou le caractère ‘^’ ou le caractère ‘b’" 
+POURRAIT ETRE AUSSI ACCEPTE COMME "tout sauf a et b"
+POURRAIT ETRE AUSSI REFUSE comme invalide 
+(si vous considérez que les opérateurs doivent être échappés dans un groupe de char)
+A décider
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : [z-a]
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Invalid group of chars.
+POURRAIT ETRE AUSSI ACCEPTE COMME [a-z]. A décider.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : [9-0]
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Invalid group of chars.
+POURRAIT ETRE AUSSI ACCEPTE COMME [0-9]. A décider.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '*'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Invalid regexp.
+POURRAIT ETRE AUSSI ACCEPTE COMME ‘*’
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '**'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Invalid regexp.
+POURRAIT ETRE AUSSI ACCEPTE COMME ‘*’ zero or more times
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\**'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "*", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '+'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Invalid regexp.
+POURRAIT ETRE AUSSI ACCEPTE COMME ‘+’$
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '++'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Invalid regexp.
+POURRAIT ETRE AUSSI ACCEPTE COMME ‘+’ zero or more times
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\++'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "+", one or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[?'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Ill-terminated char group at: '?'.
+Error parsing regexp [?.
+POURRAIT ETRE AUSSI ACCEPTE COMME ‘[‘ zero or one time. A décider.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\[?'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "[", zero or one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ']*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "]", zero or more times.
+POURRAIT ETRE AUSSI REJETE COMME INVALIDE. A décider.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\]*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "]", zero or more times.
+POURRAIT ETRE AUSSI REJETE COMME INVALIDE. A décider.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z]?*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "abcdefghijklmnopqrstuvwxyz", zero or one time.
+One in "*", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z]\?\*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "abcdefghijklmnopqrstuvwxyz", one time.
+One in "?", one time.
+One in "*", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z]\?*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "abcdefghijklmnopqrstuvwxyz", one time.
+One in "?", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z^0]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "abcdefghijklmnopqrstuvwxyz^0", one time.
+
+# END Test stdout and stderr
+# TEST END   ###################################################################

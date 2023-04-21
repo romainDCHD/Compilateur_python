@@ -1,0 +1,146 @@
+
+
+# TEST START ###################################################################
+# Test args              : '\n'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "
+", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\t'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "	", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "*", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "+", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\^'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "^", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\.'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in ".", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\['
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "[", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "]", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\\'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "\", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\\+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "\", one or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\n*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "
+", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\**'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "*", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\[*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "[", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\[+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "[", one or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^\n'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+synthax error : can't put ^+ or ^? for instance
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ‘^\\’
+# Test return code       : SIGNAL 11 - SIGSEGV
+# Test stdout and stderr :
+
+# END Test stdout and stderr
+# TEST END   ###################################################################

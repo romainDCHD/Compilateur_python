@@ -1,0 +1,50 @@
+# Start pyc-objdump output
+
+.set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "functions/function3.py"
+.set name		 "<module>"
+.set stack_size		 4
+.set arg_count		 0
+
+.interned
+	"i"
+	"<module>"
+
+.consts
+	0
+	1
+	2
+	3
+	"i a pour valeur"
+	None
+
+.names
+	"i"
+
+.text
+.line 1
+	SETUP_LOOP            label_2
+	LOAD_CONST            0	# 0
+	LOAD_CONST            1	# 1
+	LOAD_CONST            2	# 2
+	LOAD_CONST            3	# 3
+	BUILD_LIST            4
+	GET_ITER
+label_0:
+	FOR_ITER              label_1
+	STORE_NAME            0	# "i"
+.line 2
+	LOAD_CONST            4	# "i a pour valeur"
+	LOAD_NAME             0	# "i"
+	BUILD_TUPLE           2
+	PRINT_ITEM
+	PRINT_NEWLINE
+	JUMP_ABSOLUTE         label_0
+label_1:
+	POP_BLOCK
+label_2:
+	LOAD_CONST            5	# None
+	RETURN_VALUE
+
+# Disassembled Thu Nov 17 02:55:09 2022

@@ -1,0 +1,99 @@
+
+
+# Start pyc-objdump output
+
+.set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "functions/function8.py"
+.set name		 "<module>"
+.set stack_size		 4
+.set arg_count		 0
+
+.interned
+	"int"
+	"input"
+	"year"
+	"format"
+	"<module>"
+
+.consts
+	"Enter a year: "
+	400
+	0
+	100
+	"{0} is a leap year"
+	4
+	"{0} is not a leap year"
+	None
+
+.names
+	"int"
+	"input"
+	"year"
+	"format"
+
+.text
+.line 3
+	LOAD_NAME             0	# "int"
+	LOAD_NAME             1	# "input"
+	LOAD_CONST            0	# "Enter a year: "
+	CALL_FUNCTION         1
+	CALL_FUNCTION         1
+	STORE_NAME            2	# "year"
+.line 10
+	LOAD_NAME             2	# "year"
+	LOAD_CONST            1	# 400
+	BINARY_MODULO         
+	LOAD_CONST            2	# 0
+	COMPARE_OP            2	# "=="
+	POP_JUMP_IF_FALSE     label_0
+	LOAD_NAME             2	# "year"
+	LOAD_CONST            3	# 100
+	BINARY_MODULO         
+	LOAD_CONST            2	# 0
+	COMPARE_OP            2	# "=="
+	POP_JUMP_IF_FALSE     label_0
+.line 11
+	LOAD_CONST            4	# "{0} is a leap year"
+	LOAD_ATTR             3
+	LOAD_NAME             2	# "year"
+	CALL_FUNCTION         1
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+	JUMP_FORWARD          label_2
+.line 15
+label_0:
+	LOAD_NAME             2	# "year"
+	LOAD_CONST            5	# 4
+	BINARY_MODULO         
+	LOAD_CONST            2	# 0
+	COMPARE_OP            2	# "=="
+	POP_JUMP_IF_FALSE     label_1
+	LOAD_NAME             2	# "year"
+	LOAD_CONST            3	# 100
+	BINARY_MODULO         
+	LOAD_CONST            2	# 0
+	COMPARE_OP            3	# "!="
+	POP_JUMP_IF_FALSE     label_1
+.line 16
+	LOAD_CONST            4	# "{0} is a leap year"
+	LOAD_ATTR             3
+	LOAD_NAME             2	# "year"
+	CALL_FUNCTION         1
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+	JUMP_FORWARD          label_2
+.line 21
+label_1:
+	LOAD_CONST            6	# "{0} is not a leap year"
+	LOAD_ATTR             3
+	LOAD_NAME             2	# "year"
+	CALL_FUNCTION         1
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+label_2:
+	LOAD_CONST            7	# None
+	RETURN_VALUE          
+
+# Disassembled Sat Nov 19 13:03:10 2022
+
